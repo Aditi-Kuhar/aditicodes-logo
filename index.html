@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdititCodes Java - Who I Am & What I Do</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .logo-container {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+            border: 2px solid #30363d;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 0 30px rgba(0, 255, 128, 0.2);
+            position: relative;
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .profile-section {
+            margin-bottom: 25px;
+        }
+
+        .name-tag {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .hello-tag {
+            color: #8b949e;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .name {
+            color: #00ff80;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 0 0 20px rgba(0, 255, 128, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .identity {
+            color: #58a6ff;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .what-i-do {
+            background: #0d1117;
+            border: 2px solid #f78c6c;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .what-i-do::before {
+            content: "What I Do";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #0d1117;
+            color: #f78c6c;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 0 8px;
+        }
+
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 13px;
+            padding: 5px 0;
+        }
+
+        .activity-icon {
+            margin-right: 10px;
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .teach-icon { color: #00ff80; }
+        .code-icon { color: #f78c6c; }
+        .question-icon { color: #ffd700; }
+        .share-icon { color: #58a6ff; }
+
+        .java-emphasis {
+            background: linear-gradient(45deg, #f78c6c, #ff9500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .promise-section {
+            background: #161b22;
+            border-left: 4px solid #00ff80;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .promise-text {
+            color: #00ff80;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .promise-subtitle {
+            color: #8b949e;
+            font-size: 11px;
+            margin-top: 3px;
+        }
+
+        .social-proof {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding: 15px 10px;
+            background: rgba(33, 38, 45, 0.5);
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+
+        .proof-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .proof-number {
+            color: #00ff80;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0, 255, 128, 0.3);
+            display: block;
+        }
+
+        .proof-label {
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 3px;
+        }
+
+        .cursor {
+            display: inline-block;
+            background: #00ff80;
+            width: 2px;
+            height: 16px;
+            margin-left: 3px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .floating-code {
+            position: absolute;
+            color: #30363d;
+            font-size: 12px;
+            opacity: 0.2;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .code-1 { top: 15%; right: 10%; animation-delay: 0s; }
+        .code-2 { bottom: 20%; left: 8%; animation-delay: 3s; }
+        .code-3 { top: 50%; left: 5%; animation-delay: 6s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
+            50% { transform: translateY(-15px) rotate(5deg); opacity: 0.4; }
+        }
+
+        .highlight-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 255, 128, 0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.8); }
+            50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="highlight-glow"></div>
+        
+        <div class="floating-code code-1">System.out.println();</div>
+        <div class="floating-code code-2">public class {}</div>
+        <div class="floating-code code-3">if(learn) grow;</div>
+        
+        <div class="profile-section">
+            <div class="name-tag">
+                <div class="hello-tag">👋 Hi, I'm</div>
+                <div class="name">ADITI<span class="cursor"></span></div>
+                <div class="identity">🎓 B.Tech CSE Student | Java Learner</div>
+            </div>
+        </div>
+
+        <div class="what-i-do">
+            <div class="activity-list">
+                <div class="activity-item">
+                    <span class="activity-icon teach-icon">📚</span>
+                    <span>Teaching <span class="java-emphasis">JAVA</span> concepts</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-icon code-icon">💻</span>
+                    <span>Sharing my coding journey</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-icon question-icon">❓</span>
+                    <span>Asking questions & challenges</span>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-icon share-icon">🚀</span>
+                    <span>Building community together</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="promise-section">
+            <div class="promise-text">Learn Java with me - Student to Student</div>
+            <div class="promise-subtitle">Real concepts • Real questions • Real growth</div>
+        </div>
+
+        <div class="social-proof">
+            <div class="proof-item">
+                <div class="proof-number">Regular</div>
+                <div class="proof-label">Videos</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-number">Interactive</div>
+                <div class="proof-label">Learning</div>
+            </div>
+            <div class="proof-item">
+                <div class="proof-number">Java</div>
+                <div class="proof-label">Focus</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nameElement = document.querySelector('.name');
+            const activities = document.querySelectorAll('.activity-item');
+            
+            // Smooth entrance animation for activities
+            activities.forEach((activity, index) => {
+                activity.style.opacity = '0';
+                activity.style.transform = 'translateX(-20px)';
+                activity.style.transition = 'all 0.5s ease';
+                
+                setTimeout(() => {
+                    activity.style.opacity = '1';
+                    activity.style.transform = 'translateX(0)';
+                }, (index + 1) * 200);
+            });
+
+            // Interactive hover effects
+            activities.forEach(activity => {
+                activity.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px) scale(1.02)';
+                    this.style.background = 'rgba(88, 166, 255, 0.1)';
+                    this.style.borderRadius = '5px';
+                    this.style.padding = '8px 5px';
+                });
+                
+                activity.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0) scale(1)';
+                    this.style.background = 'transparent';
+                    this.style.padding = '5px 0';
+                });
+            });
+
+            // Click interaction
+            nameElement.addEventListener('click', function() {
+                this.style.color = '#f78c6c';
+                setTimeout(() => {
+                    this.style.color = '#00ff80';
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
